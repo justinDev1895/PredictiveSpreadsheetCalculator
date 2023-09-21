@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PredictiveSpreadsheet.App.Views.UpdateMonth"
+             Title="UpdateMonth"
+              xmlns:lib="clr-namespace:PredictiveSpreadsheet.Lib.ViewModels;assembly=PredictiveSpreadsheet.Lib"
+               x:DataType="{x:Type lib:UpdateMonthModel}"
+             >
+    <HorizontalStackLayout >
+        <VerticalStackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions
+               
+                >
+                    <ColumnDefinition Width="300" />
+
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+
+
+
+
+                </Grid.RowDefinitions>
+                <Label 
+                    VerticalTextAlignment="Start"
+HorizontalTextAlignment="Start"
+Grid.Row="0"
+Grid.Column="0"   
+FontAttributes="Bold"
+LineBreakMode="NoWrap"
+Text="Week:"/>
+                <Picker x:Name="SelectedWeek"
+
+Grid.Row="1"
+ Grid.Column="0"
+SelectedItem="{Binding Model.SelectedWeek}"
+>
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Week 1</x:String>
+                            <x:String>Week 2</x:String>
+                            <x:String>Week 3</x:String>
+                            <x:String>Week 4</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label 
+         VerticalTextAlignment="Start"
+         HorizontalTextAlignment="Start"
+         Grid.Row="2"
+         Grid.Column="0"   
+         FontAttributes="Bold"
+         LineBreakMode="NoWrap"
+         Text="Client Name:"/>
+                <Entry 
+         Grid.Row="3"
+         Grid.Column="0"      
+         Placeholder="Client Name"
+         Text="{Binding Model.ClientName}"/>
+                <Label 
+         VerticalTextAlignment="Center"
+         Grid.Row="4"
+         Grid.Column="0"
+         FontAttributes="Bold"
+         Text="Service Name:"/>
+                <Picker
+         x:Name="ServiceName"
+        
+        
+         Grid.Row="5"
+         Grid.Column="0"
+         SelectedItem="{Binding Model.ServiceName}"
+           >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Holistic Therapy</x:String>
+                            <x:String>Brain Health</x:String>
+                            <x:String>Natural Health</x:String>
+                            <x:String>Client Parent Coaching</x:String>
+                            <x:String>ReCODE</x:String>
+                            <x:String>Family Therapy</x:String>
+                            <x:String>Lab Review</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+
+                </Picker>
+                <Label 
+         VerticalTextAlignment="Center"
+         Grid.Row="6"
+         Grid.Column="0"
+         FontAttributes="Bold"
+        
+         Text="Client Rate:"/>
+                <Entry 
+         Grid.Row="7"
+         Grid.Column="0"
+         Placeholder="100 for $100 / hr"
+         Text="{Binding Model.ClientRate}"/>
+                <Label 
+         VerticalTextAlignment="Center"
+         Grid.Row="8"
+         Grid.Column="0"
+         FontAttributes="Bold"
+        
+         Text="Actual Rate:"/>
+                <Entry 
+         Grid.Row="9"
+         Grid.Column="0"
+         Placeholder="265 for $265 / hr"
+         Text="{Binding Model.ActualRate}"/>
+                <Label 
+         VerticalTextAlignment="Start"
+         HorizontalTextAlignment="Start"
+         Grid.Row="10"
+          Grid.Column="0"  
+                FontAttributes="Bold"
+         Text="Minutes (60):"/>
+                <Entry 
+         Grid.Row="11"
+          Grid.Column="0"
+         Placeholder="60 for 60 minutes"
+       
+         Text="{Binding Model.Minutes}"/>
+                <Label 
+         VerticalTextAlignment="Center"
+         Grid.Row="12"
+          Grid.Column="0"
+         Text="Number of Sessions: "
+                  FontAttributes="Bold"
+         
+         />
+                <Picker x:Name="NumberOfSessionsPicker"
+             
+             Grid.Row="13"
+              Grid.Column="0"
+             SelectedItem="{Binding Model.NumberOfSessions}"
+             >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>0</x:String>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                            <x:String>8</x:String>
+                            <x:String>9</x:String>
+                            <x:String>10</x:String>
+
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Label 
+VerticalTextAlignment="Start"
+HorizontalTextAlignment="Start"
+Grid.Row="14"
+Grid.Column="0"   
+FontAttributes="Bold"
+LineBreakMode="NoWrap"
+Text="Credit:"/>
+                <Entry 
+       Grid.Row="15"
+       Grid.Column="0"
+       Placeholder="100 for $100 Credit"
+       Text="{Binding Model.Credit}"/>
+
+
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Button 
+HorizontalOptions="CenterAndExpand"
+               BorderWidth="5"
+  
+Grid.Row="0"
+      
+Text="Save" 
+
+Command="{Binding UpdateMonthCommand}"/>
+            </Grid>
+        </VerticalStackLayout>
+
+        <Grid>
+            <Grid.ColumnDefinitions
+                ColumnSpacing="1"
+                >
+                <ColumnDefinition Width="225"/>
+                <ColumnDefinition Width="225" />
+                <ColumnDefinition Width="225" />
+                <ColumnDefinition Width="225" />
+
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+
+
+            </Grid.RowDefinitions>
+            <Label 
+                  VerticalTextAlignment="Start"
+                  HorizontalTextAlignment="Start"
+                  Grid.Row="0"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="4"      
+                  Text="Rate(s) Per 60 Minute Session"
+                  LineBreakMode="NoWrap"      
+                  FontAttributes="Bold"
+                  />
+            <Label 
+                  VerticalTextAlignment="Start"
+                  HorizontalTextAlignment="Start"
+                  Grid.Row="1"
+                  Grid.Column="0"                  
+                  TextDecorations="Underline"
+                  LineBreakMode="NoWrap"
+                  Text="Client Rate / Session:"/>
+            <Label 
+                  Grid.Row="1"
+                  Grid.Column="1"     
+                  Text="{Binding Model.ClientCostPerSession, Mode=TwoWay}"/>
+            <Label 
+                  VerticalTextAlignment="Start"
+                  HorizontalTextAlignment="Start"
+                  Grid.Row="1"
+                  Grid.Column="2"  
+                  LineBreakMode="NoWrap"
+                  TextDecorations="Underline"
+                  Text="Actual Rate / Session ($265 Base):"/>
+            <Label 
+                  Grid.Row="1"
+                  Grid.Column="3"      
+                  Text="{Binding Model.ActualCostPerSession, Mode=TwoWay}"/>
+
+            <Label
+          Text="Discount(s) Based on Rate Value"
+          FontAttributes="Bold"
+          LineBreakMode="NoWrap"
+          Grid.Row="2"
+          Grid.ColumnSpan="4"                
+          />
+            <Label 
+          Text="Discount Amount:"
+          TextDecorations="Underline"
+          LineBreakMode="NoWrap"
+          Grid.Row="3"
+          Grid.Column="0"
+      
+          />
+            <Label
+          Text="{Binding Model.DiscountAmount, Mode=TwoWay}"
+          TextColor="Red"
+          Grid.Row="3"
+          Grid.Column="1"   
+        
+          />
+            <Label 
+          Text="Discount Percentage:"
+          TextDecorations="Underline"
+          LineBreakMode="NoWrap"
+          Grid.Row="3"
+          Grid.Column="2"               
+          />
+            <Label
+          Text="{Binding Model.DiscountPercentage, Mode=TwoWay}"
+          
+          Grid.Row="3"
+          Grid.Column="3"
+      
+          />
+
+
+
+            <Label 
+             VerticalTextAlignment="Start"
+             HorizontalTextAlignment="Start"
+             Grid.Row="4"
+             Grid.ColumnSpan="4"      
+             Text="Monthly Total(s)"
+             FontAttributes="Bold"
+             LineBreakMode="NoWrap"
+             />
+            <Label 
+             VerticalTextAlignment="Start"
+             HorizontalTextAlignment="Start"
+             Grid.Row="5"
+             Grid.Column="0"               
+             LineBreakMode="NoWrap"
+             TextDecorations="Underline"
+             Text="Client Revenue:"/>
+            <Label
+             Grid.Row="5"
+             Grid.Column="1"        
+            
+             Text="{Binding Model.ClientTotal, Mode=TwoWay}"/>
+            <Label 
+             VerticalTextAlignment="Center"
+             HorizontalOptions="Start"
+             Grid.Row="5"
+             Grid.Column="2"              
+             LineBreakMode="NoWrap"
+             TextDecorations="Underline"
+             Text="Potential Revenue:"/>
+            <Label 
+             Grid.Row="5"
+             Grid.Column="3"        
+          
+             Text="{Binding Model.ActualTotal, Mode=TwoWay}"/>
+
+            <Label
+          VerticalTextAlignment="Start"
+          HorizontalTextAlignment="Start"
+          Grid.Row="6"
+          Grid.Column="0"
+          Grid.ColumnSpan="4"
+          FontAttributes="Bold"
+          Text="Credit"
+        />
+            <Label
+         Text="Credit (-):"
+         LineBreakMode="NoWrap"
+         TextDecorations="Underline"
+         Grid.Row="7"
+         Grid.Column="0"                 
+        />
+            <Label
+        Grid.Row="7"
+        Grid.Column="1"
+        Text="{Binding Model.Credit}"
+                      
+        />
+            <Label 
+        Text="Total After Credit:"
+        Grid.Row="7"
+        Grid.Column="2"
+        LineBreakMode="NoWrap"
+        TextDecorations="Underline"              
+        />
+            <Label 
+        Grid.Row="7"
+        Grid.Column="3"
+       
+        Text="{Binding Model.TotalAfterCredit}"
+        />
+
+
+
+        </Grid>
+    </HorizontalStackLayout>
+</ContentPage>

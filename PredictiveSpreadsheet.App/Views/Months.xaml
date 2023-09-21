@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PredictiveSpreadsheet.App.Views.Months"
+             Title="Months"
+             xmlns:lib="clr-namespace:PredictiveSpreadsheet.Lib.ViewModels;assembly=PredictiveSpreadsheet.Lib"
+             x:DataType="{x:Type lib:MonthsModel}"
+             >
+    <VerticalStackLayout>
+
+        <HorizontalStackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Revenue Total:" Grid.Row="0" FontAttributes="Bold" />
+                <Label Grid.Column="1" Text="{Binding TotalRevenue}" Grid.Row="0" />
+                <Label Grid.Column="2" Text="Average Client Rate:" Grid.Row="0" FontAttributes="Bold" />
+                <Label Grid.Column="3" Text="{Binding AverageClientRate}" Grid.Row="0" />
+                <Label Grid.Column="0" Text="Total # of Sessions:" Grid.Row="1" FontAttributes="Bold" />
+                <Label Grid.Column="1" Text="{Binding TotalNumberOfSessions}" Grid.Row="1"/>
+                <Label Grid.Column="2" Text="Average Discount %:" Grid.Row="1" FontAttributes="Bold" />
+                <Label Grid.Column="3" Text="{Binding DiscountAverage}" Grid.Row="1"/>
+                <Label Grid.Column="0" Text="Discount Revenue: " Grid.Row="3" />
+                <Label Grid.Column="1" Text="{Binding LossDiscountRevenue}" Grid.Row="3" TextColor="Red" />
+            </Grid>
+            <Label Text="Rows" VerticalTextAlignment="Center"/>
+            <Button Text="+" Command="{Binding AddMonthCommand}"/>
+
+        </HorizontalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Label 
+             Grid.Column="0"
+             Text="#"
+             FontAttributes="Bold"></Label>
+            <Label 
+             Grid.Column="1"
+             Text="Week"
+             FontAttributes="Bold"></Label>
+            <Label 
+             Grid.Column="2"
+             Text="Name"
+             FontAttributes="Bold"></Label>
+            <Label 
+             Grid.Column="3"
+             Text="Service"
+             FontAttributes="Bold"></Label>
+            <Label 
+             Grid.Column="4"
+             Text="# of Sessions"
+             FontAttributes="Bold"></Label>
+            <Label 
+             Grid.Column="5"
+             Text="Actual Cost / Session"
+             FontAttributes="Bold"></Label>
+            <Label 
+             Grid.Column="6"
+             Text="Client Cost / Session"
+             FontAttributes="Bold"></Label>
+            <Label 
+             Grid.Column="7"
+             Text="Actual Monthly Total"
+             FontAttributes="Bold"></Label>
+            <Label 
+             Grid.Column="8"
+             Text="Client Monthly Total"
+             FontAttributes="Bold"></Label>
+            <Label 
+   Grid.Column="9"
+   Text="Actual Total"
+   FontAttributes="Bold"></Label>
+            <Label 
+   Grid.Column="10"
+   Text="Discount Total"
+   FontAttributes="Bold"></Label>
+            <Label 
+   Grid.Column="11"
+   Text="Credit"
+   FontAttributes="Bold"></Label>
+            <Label 
+Grid.Column="12"
+Text="Total After Credit"
+FontAttributes="Bold"></Label>
+        </Grid>
+        <CollectionView ItemsSource="{Binding Months}"
+                
+         >
+            <CollectionView.ItemTemplate>
+                
+                <DataTemplate x:DataType="{x:Type lib:MonthModel}">
+               
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width=".5*" />
+                            <ColumnDefinition Width="1*" />
+
+                        </Grid.ColumnDefinitions>
+
+                            <Entry Grid.Column="0" IsReadOnly="True" Text="{Binding RowNum}"></Entry>
+                            <Entry Grid.Column="1" IsReadOnly="True" Text="{Binding SelectedWeek}"></Entry>
+                            <Entry Grid.Column="2" IsReadOnly="True" Text="{Binding ClientName}"></Entry>
+                            <Entry Grid.Column="3" IsReadOnly="True" Text="{Binding ServiceName}"></Entry>
+                            <Entry Grid.Column="4" IsReadOnly="True" Text="{Binding NumberOfSessions}"></Entry>
+                            <Entry Grid.Column="5" IsReadOnly="True" Text="{Binding ActualCostPerSession}"></Entry>
+                            <Entry Grid.Column="6" IsReadOnly="True" Text="{Binding ClientCostPerSession}"></Entry>
+                            <Entry Grid.Column="7" IsReadOnly="True" Text="{Binding ActualTotal}"></Entry>
+                            <Entry Grid.Column="8" IsReadOnly="True" Text="{Binding ClientTotal}"></Entry>
+                            <Entry Grid.Column="9" IsReadOnly="True" Text="{Binding ActualRate}"></Entry>
+                            <Entry Grid.Column="10" IsReadOnly="True" Text="{Binding DiscountAmount}"></Entry>
+                            <Entry Grid.Column="11" IsReadOnly="True" Text="{Binding Credit}"></Entry>
+                            <Entry Grid.Column="12" IsReadOnly="True" Text="{Binding TotalAfterCredit}"></Entry>
+                            <Button Grid.Column="13"
+                                    Text="X" 
+                                    HorizontalOptions="StartAndExpand"
+                                    FontSize="Micro"
+                                    BackgroundColor="Red"
+                                    Command="{Binding DeleteMonthCommand}"
+                                    CommandParameter="{Binding RowNum}"
+                                    
+                                    />
+                        <Button Grid.Column="14" Text="UPDATE" 
+                                x:Name="UpdateButton"
+                                Command="{Binding UpdateMonthCommand}"
+                                CommandParameter="{Binding RowNum}"/>
+
+
+
+                    </Grid>
+                   
+                    
+                </DataTemplate>
+            
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+
+    </VerticalStackLayout>
+</ContentPage>
